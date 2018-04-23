@@ -22,7 +22,7 @@ defmodule InstagramClone.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 
@@ -32,7 +32,7 @@ defmodule InstagramClone.Web do
 
       alias InstagramClone.Repo
       import Ecto
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
 
       import InstagramClone.Router.Helpers
       import InstagramClone.Gettext
@@ -67,7 +67,7 @@ defmodule InstagramClone.Web do
 
       alias InstagramClone.Repo
       import Ecto
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
       import InstagramClone.Gettext
     end
   end

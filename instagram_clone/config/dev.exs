@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :instagram_clone, InstagramClone.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "eagascarodriguez171",
+  password: "Poptart1",
   database: "instagram_clone_dev",
   hostname: "localhost",
   pool_size: 10
