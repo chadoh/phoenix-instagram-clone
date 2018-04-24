@@ -1,1 +1,9 @@
 /* This file is for your main application css. */
+body{
+  background-color: lightblue;
+}
+.instagramlogo{
+  background-image: url("/images/instagramlogo.png");
+  height: 128px;
+  width: 550px;
+}
