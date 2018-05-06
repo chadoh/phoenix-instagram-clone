@@ -4,8 +4,8 @@ defmodule InstagramClone.UserController do
   alias InstagramClone.User
 
   def index(conn, _params) do
-      users = Repo.all(InstagramClone.User)
-      render(conn, "index.html", users: users)
+    users = Repo.all(InstagramClone.User)
+    render(conn, "index.html", users: users)
   end
 
   def show(conn, %{"id" => id}) do
