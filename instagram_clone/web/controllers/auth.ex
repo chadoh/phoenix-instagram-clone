@@ -14,6 +14,10 @@ defmodule InstagramClone.Auth do
     assign(conn, :current_user, user)
   end
 
+  def session(conn) do
+    get_session(conn, :user_id)
+  end
+
   def login(conn, user) do
     conn
     |> assign(:current_user, user)

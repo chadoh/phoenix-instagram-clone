@@ -36,6 +36,7 @@ defmodule InstagramClone.Web do
 
       import InstagramClone.Router.Helpers
       import InstagramClone.Gettext
+      import InstagramClone.Auth, only: [authenticate_user: 2] # New import
     end
   end
 
@@ -58,6 +59,8 @@ defmodule InstagramClone.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      import InstagramClone.Auth, only: [authenticate_user: 2] # New import
     end
   end
 
