@@ -8,7 +8,7 @@ defmodule InstagramClone.User do
     field :password_hash, :string
 
     has_many :posts, InstagramClone.Post
-
+    has_many :comments, InstagramClone.Comment
     timestamps
   end
 

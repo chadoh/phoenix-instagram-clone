@@ -30,8 +30,10 @@ defmodule InstagramClone.PostController do
   end
 
   def show(conn, %{"id" => id}) do
+    query = from c in InstagramClone.Comment, where: c.post_id == ^id
     post = Repo.get!(Post, id)
-    render(conn, "show.html", post: post)
+    comments = Repo.all(query)
+    render(conn, "show.html", post: post, comments: comments)
   end
 
   def edit(conn, %{"id" => id}) do

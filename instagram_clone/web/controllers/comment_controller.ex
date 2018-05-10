@@ -14,8 +14,11 @@ defmodule InstagramClone.CommentController do
   end
 
   def create(conn, %{"comment" => comment_params}) do
-    changeset = Comment.changeset(%Comment{}, comment_params)
-
+    changeset =
+          Repo.get(InstagramClone.User, InstagramClone.Auth.session(conn))
+          |> build_assoc(:comments)
+          |> IO.inspect()
+          |> Comment.changeset(comment_params)
     case Repo.insert(changeset) do
       {:ok, _comment} ->
         conn
@@ -27,6 +30,7 @@ defmodule InstagramClone.CommentController do
   end
 
   def show(conn, %{"id" => id}) do
+    changeset = 
     comment = Repo.get!(Comment, id)
     render(conn, "show.html", comment: comment)
   end

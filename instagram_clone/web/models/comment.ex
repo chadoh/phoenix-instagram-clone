@@ -14,7 +14,7 @@ defmodule InstagramClone.Comment do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:content])
-    |> validate_required([:content])
+    |> cast(params, [:content, :post])
+    |> validate_required([:content, :post])
   end
 end

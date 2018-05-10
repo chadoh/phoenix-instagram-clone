@@ -18,6 +18,8 @@
   </li>
 
 </ul>
-
+<%= for comment <- @comments do %>
+<p>comment.something</p>
+<% end %>
 <%= link "Edit", to: post_path(@conn, :edit, @post) %>
 <%= link "Back", to: post_path(@conn, :index) %>
