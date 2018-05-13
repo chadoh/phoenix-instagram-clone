@@ -16,9 +16,9 @@ defmodule InstagramClone.PostController do
 
   def create(conn, %{"post" => post_params}) do
     changeset =
-          Repo.get(InstagramClone.User, InstagramClone.Auth.session(conn))
-          |> build_assoc(:posts)
-          |> Post.changeset(post_params)
+      Repo.get(InstagramClone.User, InstagramClone.Auth.session(conn))
+      |> build_assoc(:posts)
+      |> Post.changeset(post_params)
     case Repo.insert(changeset) do
       {:ok, _post} ->
         conn
